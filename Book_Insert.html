@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Book Details</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Insert Book Details</h2>
+    <form action="Book_Insert.php" method="POST">
+        <label for="book_id">Book ID NO:</label>
+        <input type="text" id="book_id" name="book_id" required><br><br>
+        
+        <label for="name">Name of the Book:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="author">Author Name:</label>
+        <input type="text" id="author" name="author" required><br><br>
+        
+        <label for="year">Year of Publication:</label>
+        <input type="number" id="year" name="year" required><br><br>
+        
+        <input type="submit" name="submit" value="Insert Book Details">
+    </form>
+</body>
+</html>
