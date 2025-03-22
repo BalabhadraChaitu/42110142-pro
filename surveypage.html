@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Starting Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(237, 240, 229);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; 
+            flex-direction: column;
+        }
+        .start-page {
+            text-align: center;
+        }
+        .start-page img {
+            width: 750px;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .start-page h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .start-page a {
+            background-color: rgb(212, 83, 83);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .start-page a:hover {
+            background-color: rgb(180, 60, 60);
+        }
+        .survey-form{
+            display: none; 
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+        .survey-form:target {
+            display: block; 
+        }
+        .survey-form label {
+            font-weight: bold;
+            color: #333;
+        }
+        .survey-form input[type="text"],
+        .survey-form input[type="email"],
+        .survey-form input[type="number"],
+        .survey-form select,
+        .survey-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 16px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .survey-form input[type="submit"] {
+            background-color: rgb(212, 83, 83);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .survey-form input[type="submit"]:hover {
+            background-color: rgb(180, 60, 60);
+        }
+        footer{
+        text-align: center;
+        padding: 10px;
+        background-color: #f2acac;
+        color: #f4f4f4;
+        position: -ms-page;
+        bottom: 0;
+        width:100%
+    }
+    </style>
+</head>
+<body>
+
+    <div class="start-page" id="startPage">
+        <img src="C:\Users\bchai\OneDrive\Pictures\Camera Roll\download.jpg" alt="Survey Image">
+        <h1>Welcome to the Survey!</h1>
+        <a href="#surveyForm">Start Survey</a>
+    </div>
+
+    <div class="survey-form" id="surveyForm">
+        <h1 style="text-align: center;">Survey Form</h1>
+        <p style="text-align: center;">This is a survey form to find out what most people like in different domains.</p>
+        <marquee style="background-color:rgb(212, 83, 83);"><h2>Enter details correctly.</h2></marquee>
+
+        <form action="/submit-survey" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" min="1" max="100"><br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br><br>
+
+            <label for="color">What is your favorite color?</label><br>
+            <select id="color" name="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="movie-genre">What is your favorite movie genre?</label><br>
+            <select id="movie-genre" name="movie-genre">
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="horror">Horror</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="food">What is your favorite food?</label><br>
+            <input type="text" id="food" name="food" required><br><br>
+
+            <label for="music-genre">What is your favorite music genre?</label><br>
+            <select id="music-genre" name="music-genre">
+                <option value="pop">Pop</option>
+                <option value="rock">Rock</option>
+                <option value="jazz">Jazz</option>
+                <option value="classical">Classical</option>
+                <option value="hip-hop">Hip-Hop</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="celebrity">Who is your favourite celebrity?</label><br>
+            <input type="text" id="celebrity" name="celebrity" required><br><br>
+
+            <label for="book-genre">What is your favorite book genre?</label><br>
+            <select id="book-genre" name="book-genre">
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="mystery">Mystery</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="poet">Who is your favourite poet/writer?</label><br>
+            <input type="text" id="poet" name="poet" required><br><br>
+
+            <label for="sport">What is your favorite sport?</label><br>
+            <select id="sport" name="sport">
+                <option value="football">Football</option>
+                <option value="basketball">Basketball</option>
+                <option value="tennis">Tennis</option>
+                <option value="cricket">Cricket</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label>What are your hobbies? (Select all that apply):</label><br>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">Reading</label><br>
+            <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+            <label for="traveling">Traveling</label><br>
+            <input type="checkbox" id="sports" name="hobbies" value="sports">
+            <label for="sports">Sports</label><br>
+            <input type="checkbox" id="gaming" name="hobbies" value="gaming">
+            <label for="gaming">Gaming</label><br>
+            <input type="checkbox" id="cooking" name="hobbies" value="cooking">
+            <label for="cooking">Cooking</label><br>
+            <input type="checkbox" id="music" name="hobbies" value="music">
+            <label for="music">Music</label><br><br>
+
+            <label for="comments">Any additional comments?</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Chaitanya.All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
