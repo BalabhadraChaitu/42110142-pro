@@ -1,0 +1,26 @@
+import java.io.*;
+
+public class FileHandler {
+    public static void main(String[] args) throws IOException {
+        String filePath = "example.txt";
+
+        // 1. Writing the file
+        FileWriter writer = new FileWriter(filePath);
+        writer.write("This is the original content.\n");
+        writer.close();
+
+        // 2. Reading the file
+        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        String line;
+        System.out.println("Reading file:");
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        reader.close();
+
+        // 3. Modifying the file
+        FileWriter modifier = new FileWriter(filePath, true);
+        modifier.write("This is added content.\n");
+        modifier.close();
+    }
+}
